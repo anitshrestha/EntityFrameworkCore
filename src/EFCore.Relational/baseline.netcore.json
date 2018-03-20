@@ -22696,6 +22696,33 @@
           "GenericParameter": []
         },
         {
+          "Kind": "Method",
+          "Name": "GetConfiguredColumnType",
+          "Parameters": [
+            {
+              "Name": "property",
+              "Type": "Microsoft.EntityFrameworkCore.Metadata.IProperty"
+            }
+          ],
+          "ReturnType": "System.String",
+          "Static": true,
+          "Extension": true,
+          "Visibility": "Public",
+          "GenericParameter": []
+        }
+      ],
+      "GenericParameters": []
+    },
+    {
+      "Name": "Microsoft.EntityFrameworkCore.Internal.RelationalStrings",
+      "Visibility": "Public",
+      "Kind": "Class",
+      "Abstract": true,
+      "Static": true,
+      "Sealed": true,
+      "ImplementedInterfaces": [],
+      "Members": [
+        {
           "Kind": "Constructor",
           "Name": ".ctor",
           "Parameters": [
