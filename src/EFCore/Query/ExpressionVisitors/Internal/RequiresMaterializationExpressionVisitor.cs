@@ -528,7 +528,7 @@ namespace Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal
             }
         }
 
-        private bool ConvergesToSingleValue(QueryModel queryModel)
+        private static bool ConvergesToSingleValue(QueryModel queryModel)
         {
             var outputInfo = queryModel.GetOutputDataInfo();
 
@@ -536,17 +536,6 @@ namespace Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal
                 || outputInfo is StreamedScalarValueInfo)
             {
                 return true;
-            }
-
-            foreach (var ancestorQueryModel in _queryModelStack)
-            {
-                outputInfo = ancestorQueryModel.GetOutputDataInfo();
-
-                if (outputInfo is StreamedSingleValueInfo
-                    || outputInfo is StreamedScalarValueInfo)
-                {
-                    return true;
-                }
             }
 
             return false;
